@@ -1,46 +1,189 @@
-# Getting Started with Create React App
+# MBTI React 性格測驗應用程式
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+一個使用 React + TypeScript 開發的現代化 MBTI 性格測驗網頁應用程式，基於 30 題核心 MBTI 題庫，提供流暢的用戶體驗和詳細的性格分析。
 
-## Available Scripts
+## 🌟 功能特色
 
-In the project directory, you can run:
+### 核心功能
+- **30 題精準 MBTI 測驗** - 基於專業設計的核心題庫
+- **中文界面** - 完全中文化，符合台灣用戶習慣
+- **流暢動畫** - 現代化的頁面切換和互動效果
+- **響應式設計** - 完美支援桌面、平板、手機
+- **即時進度追蹤** - 清楚顯示測驗進度和當前維度
 
-### `npm start`
+### 測驗體驗
+- **A/B 二選一題型** - 簡單直觀的選擇方式
+- **題目導航** - 可前後瀏覽已答題目
+- **答案保存** - 自動保存選擇，隨時可修改
+- **進度指示器** - 可視化顯示測驗完成度
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 結果分析
+- **16 種性格類型** - 完整的 MBTI 性格分析
+- **維度分析** - 詳細顯示四個維度的偏好百分比
+- **性格描述** - 深入的性格特質說明
+- **優勢分析** - 個人優勢和成長機會
+- **職業建議** - 適合的職業方向推薦
+- **結果分享** - 一鍵分享測驗結果
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🛠️ 技術架構
 
-### `npm test`
+### 前端技術
+- **React 18** - 現代化的前端框架
+- **TypeScript** - 類型安全的 JavaScript
+- **CSS3** - 原生 CSS 實現，無外部依賴
+- **響應式設計** - CSS Grid + Flexbox 佈局
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 開發工具
+- **Create React App** - React 開發環境
+- **ESLint** - 代碼品質檢查
+- **TypeScript** - 靜態類型檢查
 
-### `npm run build`
+## 📁 專案結構
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+mbti-react/
+├── public/                 # 靜態資源
+├── src/
+│   ├── components/         # React 組件
+│   │   ├── WelcomeScreen.tsx    # 歡迎頁面
+│   │   ├── QuestionScreen.tsx   # 問題頁面
+│   │   └── ResultsScreen.tsx    # 結果頁面
+│   ├── data/              # 資料檔案
+│   │   ├── questions.ts        # 30 題 MBTI 題庫
+│   │   └── personalityTypes.ts # 16 種性格類型資料
+│   ├── App.tsx            # 主應用程式組件
+│   ├── App.css            # 主要樣式檔案
+│   └── index.tsx          # 應用程式入口點
+├── package.json           # 專案依賴設定
+└── README.md             # 專案說明文件
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 快速開始
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 環境需求
+- Node.js 16.0+
+- npm 或 yarn
 
-### `npm run eject`
+### 安裝與執行
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. **克隆專案**
+   ```bash
+   git clone <repository-url>
+   cd mbti-react
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **安裝依賴**
+   ```bash
+   npm install
+   # 或
+   yarn install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. **啟動開發伺服器**
+   ```bash
+   npm start
+   # 或
+   yarn start
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. **開啟瀏覽器**
+   - 訪問 http://localhost:3000
+   - 即可開始使用 MBTI 測驗
 
-## Learn More
+### 生產環境部署
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **建立生產版本**
+   ```bash
+   npm run build
+   # 或
+   yarn build
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **部署到靜態網站服務**
+   - 將 `build` 資料夾部署到任何靜態網站服務
+   - 支援 Netlify、Vercel、GitHub Pages 等
+
+## 🎯 使用指南
+
+### 測驗流程
+1. **歡迎頁面** - 了解 MBTI 四個維度和測驗說明
+2. **回答問題** - 依序回答 30 題 A/B 選擇題
+3. **查看結果** - 獲得詳細的性格分析報告
+
+### 操作說明
+- **選擇答案** - 點擊 A 或 B 選項
+- **前後導航** - 使用上一題/下一題按鈕
+- **查看進度** - 觀察進度條和圓點指示器
+- **分享結果** - 測驗結束後可分享到社群媒體
+
+## 📊 測驗題庫設計
+
+### 維度分佈
+- **外向 (E) vs 內向 (I)** - 8 題
+- **感覺 (S) vs 直覺 (N)** - 8 題
+- **思考 (T) vs 情感 (F)** - 7 題
+- **判斷 (J) vs 感知 (P)** - 7 題
+
+### 題目特色
+- **生活情境化** - 真實生活場景的描述
+- **強制二選一** - 每題明確偏向某一端
+- **無價值判斷** - 避免社會期望偏誤
+- **中文本土化** - 符合華人文化背景
+
+## 🎨 設計特色
+
+### 視覺設計
+- **漸層配色** - 現代化的紫藍色漸層主題
+- **卡片設計** - 清晰的內容區塊分割
+- **圓角元素** - 友善的視覺風格
+- **陰影效果** - 立體層次的視覺體驗
+
+### 互動設計
+- **懸停效果** - 按鈕和卡片動態效果
+- **選中動畫** - 選擇答案的視覺回饋
+- **頁面轉場** - 流暢的畫面切換動畫
+- **進度動畫** - 直觀的進度條動態
+
+## 🔧 自定義設置
+
+### 修改題目
+編輯 `src/data/questions.ts` 檔案
+
+### 修改性格類型
+編輯 `src/data/personalityTypes.ts` 檔案
+
+### 自定義樣式
+修改 `src/App.css` 檔案
+
+## 🚀 部署選項
+
+### Netlify 部署
+1. 將程式碼推送到 GitHub
+2. 連接 Netlify 帳號
+3. 設定建置命令：`npm run build`
+4. 設定發布目錄：`build`
+
+### Vercel 部署
+1. 安裝 Vercel CLI：`npm i -g vercel`
+2. 執行：`vercel --prod`
+
+## 🔒 隱私保護
+
+- **無資料收集** - 不收集任何個人資訊
+- **本地運算** - 所有計算都在瀏覽器端完成
+- **無追蹤代碼** - 不使用任何分析或追蹤工具
+
+## 📈 效能優化
+
+- **代碼分割** - 自動分割程式碼
+- **懶加載** - 按需載入組件
+- **CSS 優化** - 原生 CSS 無依賴
+- **圖片優化** - 使用 CSS 繪製圖形
+
+## ⚠️ 免責聲明
+
+本 MBTI 測驗僅供教育和娛樂用途，不應作為專業心理評估的依據。如需專業的心理諮詢，請尋求合格的臨床心理師或輔導員協助。
+
+---
+
+**Happy Coding! 🎉**
