@@ -206,11 +206,13 @@ const QuizContainer: React.FC = () => {
             }
         }, 100);
 
+        const currentGeneratingRef = generatingRef.current;
+
         // Cleanup function
         return () => {
             isActive = false;
             activeGenerationsRef.current = 0;
-            generatingRef.current.clear();
+            currentGeneratingRef.clear();
             console.log('🧹 Cleaning up generation effect');
         };
     }, [step, userContext, questions]);
