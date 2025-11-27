@@ -1,7 +1,7 @@
 {
   "name": "mbti-react",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://NicoNicoNico123.github.io/mbti-react",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
