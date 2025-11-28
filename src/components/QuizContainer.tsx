@@ -87,6 +87,44 @@ const QuizContainer: React.FC = () => {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(stateToSave));
     }, [step, dataStep, userContext, questions, currentQuestionIndex, answers, result, scores]);
 
+    // Idle Timeout Logic
+    useEffect(() => {
+        // 5 minutes = 300,000 ms
+        // For testing, we might want to use a shorter duration, but per requirements:
+        const IDLE_TIMEOUT = 5 * 60 * 1000;
+
+        let timeoutId: NodeJS.Timeout;
+
+        const resetTimer = () => {
+            if (timeoutId) clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                console.log('💤 User idle for 5 minutes. Resetting...');
+                // Clear storage and reload to go back to welcome screen
+                localStorage.removeItem(STORAGE_KEY);
+                window.location.reload();
+            }, IDLE_TIMEOUT);
+        };
+
+        // Events to listen for
+        const events = ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'];
+
+        // Attach listeners
+        events.forEach(event => {
+            document.addEventListener(event, resetTimer);
+        });
+
+        // Initial start
+        resetTimer();
+
+        // Cleanup
+        return () => {
+            if (timeoutId) clearTimeout(timeoutId);
+            events.forEach(event => {
+                document.removeEventListener(event, resetTimer);
+            });
+        };
+    }, []);
+
     // Generate questions sequentially to prevent duplication issues
     // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
