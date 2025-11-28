@@ -91,7 +91,7 @@ const QuizContainer: React.FC = () => {
     useEffect(() => {
         // 5 minutes = 300,000 ms
         // For testing, we might want to use a shorter duration, but per requirements:
-        const IDLE_TIMEOUT = 5 * 60 * 1000;
+        const IDLE_TIMEOUT = 1 * 60 * 1000;
 
         let timeoutId: NodeJS.Timeout;
 
